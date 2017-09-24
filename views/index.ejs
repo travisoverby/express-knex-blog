@@ -1,22 +1,23 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <% include ./partials/header %>
+    <%- include ./partials/_header %>
   </head>
   <body>
     <header>
-      <% include ./partials/navbar %>
+      <%- include ./partials/_navbar %>
     </header>
     <main>
       <div class="jumbotron">
-        <form action="/" method="post">
+        <form action="/" method="post" class="text-center">
           <label>Enter your name:</label>
           <input type="text" name="name">
+          <input type="submit">
         </form>
       </div>
     </main>
     <footer>
-      <% include ./partials/footer %>
+      <%- include ./partials/_footer %>
     </footer>
   </body>
 </html>

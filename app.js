@@ -1,15 +1,21 @@
-var express = require('express');  
-var app = express();  
-var db  = require('./db');
-var port = 3000;
+'use strict';
+
+const express = require('express');  
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
+const app = express();  
+
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 // include routes
-var routes = require('./routes/index');
+const routes = require('./routes/index');
 app.use('/', routes);
 
-
-app.listen(port, () => { console.log(`Listening on port ${port}`) });  
-
+app.listen(3000, () => { console.log("Listening on port 3000"); });  

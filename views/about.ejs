@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <%- include ./partials/_header %>
+  </head>
+  <body>
+    <header>
+      <%- include ./partials/_navbar %>
+    </header>
+    <main>
+      <div class="jumbotron">
+
+        <% if (name) { %>
+
+          <p class="text-center">
+            You entered <b><%= name %></b>
+          </p>
+
+        <% }  %>
+
+      </div>
+    </main>
+    <footer>
+      <%- include ./partials/_footer %>
+    </footer>
+  </body>
+</html>
