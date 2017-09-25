@@ -25,6 +25,20 @@ router.get('/about', (req, res, next) => {
   }
 });
 
+router.post('/hipchat', (req, res, next) => {
+  
+  let message = req.body.item.message.message;
+  const name = req.body.item.message.from.name;
+  message = message.split(' ');
+  message.shift();
+  message = message.join(' ');
+  console.log(message);
 
+  res.json({ message: `${name} entered the following text: ${message}` });
+});
+
+router.get('/hipchat', (req, res, next) => {
+  res.render('index', {title: 'EXPRESS', name: 'Blog' });
+});
 
 module.exports = router;
