@@ -4,41 +4,37 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  if (!req.cookies.name) {
-    res.render('index', { title: 'EJS BLOG', name: req.cookies.name });
-  } else {
-    res.redirect('about');
-  }
+  res.render('index', { title: null, name: null });
 });
 
-router.post('/', (req, res, next) => {
-  res.cookie('name', req.body.name);
-	console.log(req.body);
-  res.redirect('/about');
+router.get('/profile', (req, res, next) => {
+  res.render('profile', { title: null, name: null });
 });
 
 router.get('/about', (req, res, next) => {
-  if (req.cookies.name) {
-    res.render('about', { title: 'EJS BLOG', name: req.cookies.name });
-  } else {
-    res.redirect('/');
-  }
+  res.render('about', { title: null, name: null });
 });
 
-router.post('/hipchat', (req, res, next) => {
-  
-  let message = req.body.item.message.message;
-  const name = req.body.item.message.from.name;
-  message = message.split(' ');
-  message.shift();
-  message = message.join(' ');
-  console.log(message);
-
-  res.json({ message: `${name} entered the following text: ${message}` });
+router.get('/register', (req, res, next) => {
+  res.render('register', { title: null, name: null });
 });
 
-router.get('/hipchat', (req, res, next) => {
-  res.render('index', {title: 'EXPRESS', name: 'Blog' });
+router.get('/contact', (req, res, next) => {
+  res.render('contact', { title: null, name: null });
 });
+
+router.get('/admin', (req, res, next) => {
+  res.render('admin', { title: null, name: null });
+});
+
+router.get('/secret', (req, res, next) => {
+  res.render('secret', { title: null, name: null });
+});
+
+router.get('/login', (req, res, next) => {
+  res.render('login', { title: null, name: null });
+});
+
+
 
 module.exports = router;

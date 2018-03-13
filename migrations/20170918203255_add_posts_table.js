@@ -1,11 +1,11 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('posts', function(table){
-    table.increments('id').primary();
-    table.string('title');
-    table.string('body');
-    table.integer('author_id').unsigned().references('uid').inTable('users');
-    table.dateTime('postDate');
+  return knex.schema.createTable('posts', function(t){
+    t.increments('id').primary();
+    t.string('title');
+    t.string('desciption');
+    t.integer('author_id').unsigned().references('uid').inTable('users');
+    t.timestamps();
   });
 };
 
