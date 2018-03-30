@@ -1,2 +1,4 @@
 # express-knex-blog
-A simple blog learning project surrounding the Express.js micro-framework and Knex.js SQL query builder.
+A simple MVC project with Express and Knex
+
+Clone the repo and run 'npm install'
